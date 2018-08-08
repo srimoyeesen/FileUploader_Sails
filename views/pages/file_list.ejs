@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+  table, th, td {
+    border: 1px solid black;
+  }
+</style>
+<table style="width:50%" >
+  <% for(var i=0; i < data.length; i++) { %>
+  <tr>
+    <td align="center" ><%= data[i]%></td><td><button onclick='<%= clickHandler %>' >Download</button></td>
+  </tr>
+  <% } %>
+</table>
+
+<script>
+  function func1(){
+    alert("I am in the click handler 1!");
+  }
+</script>
+
+</body>
+</html>
