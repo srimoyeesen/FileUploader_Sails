@@ -43,13 +43,13 @@ module.exports = {
     });
   },
 
-  download2 : function (req,res) {
-    res.send('user' + req.query.id);
-    // var req = http.get(uploadLocation + '/c4b02d33-59af-4422-873b-ca9d2b67ea12.pdf');
+  download : function (req,res) {
+    //res.send('user' + req.body.fileName);
+    res.download(uploadLocation + '/' + req.body.fileName,req.body.fileName, function (err) {
+      if (err) {
+        return res.serverError(err)
+      }
+    })
 
-  //   fs.copyFile(uploadLocation + '/c4b02d33-59af-4422-873b-ca9d2b67ea12.pdf', 'destination.pdf', (err) => {
-  //     if (err) {throw err;}
-  //   console.log('source.txt was copied to destination.txt');
-  // });
   }
 };

@@ -9,16 +9,15 @@
 <table style="width:50%" >
   <% for(var i=0; i < data.length; i++) { %>
   <tr>
-    <td align="center" ><%= data[i]%></td><td><button onclick='<%= clickHandler %>' >Download</button></td>
+    <form action="/file/download" method="post">
+    <td align="center" ><%= data[i]%></td>
+    <input type="hidden" name="fileName" value= <%= data[i] %> >
+    <td><button type="submit">Download</button>
+    </td></form>
   </tr>
   <% } %>
 </table>
 
-<script>
-  function func1(){
-    alert("I am in the click handler 1!");
-  }
-</script>
 
 </body>
 </html>
